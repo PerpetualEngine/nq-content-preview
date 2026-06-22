@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>What your content could look like · Natalie's Queendom</title>
+<style>
+  :root{
+    --bg:#ffffff; --ink:#18191b; --ink-d:#121212; --sub:#79716b; --line:#ececea; --panel:#f2f1f0;
+    --green:#c9f57e; --green-ink:#083300; --green-deep:#5aa31c;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Hoefler Text",Georgia,serif;
+    --sh:0 2px 8px rgba(20,20,15,.05); --sh-h:0 14px 40px rgba(20,20,15,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Helvetica Neue",Helvetica,"Inter",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;letter-spacing:-.011em;-webkit-font-smoothing:antialiased}
+  header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.86);backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid var(--line)}
+  .hwrap{max-width:940px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:14px 28px}
+  .pe{width:30px;height:30px;border-radius:9px;background:var(--ink);color:var(--green);display:grid;place-items:center;font-weight:700;font-size:13px}
+  .brandname{font-weight:600;font-size:15px;letter-spacing:-.02em;flex:1}
+  .hdr-r{font-size:12.5px;color:var(--sub);letter-spacing:.02em}
+  main{max-width:940px;margin:0 auto;padding:0 28px 110px}
+  section{padding:54px 0;border-bottom:1px solid var(--line)}
+  section:last-child{border-bottom:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--panel);color:var(--ink-d);font-size:12.5px;font-weight:500;padding:7px 15px;border-radius:999px}
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green-deep)}
+  .label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green-deep);margin-bottom:14px}
+  h1{font-weight:500;font-size:54px;letter-spacing:-.04em;line-height:1.0;color:var(--ink-d);margin:20px 0 16px}
+  h2{font-weight:500;font-size:30px;letter-spacing:-.03em;color:var(--ink-d);line-height:1.08}
+  .lede{font-size:18px;color:var(--sub);max-width:600px}
+  .whatsub{font-size:15px;color:var(--sub);max-width:620px;margin-top:8px}
+  .hero{padding:64px 0 50px;border-bottom:1px solid var(--line)}
+  /* note */
+  .note ol{list-style:none;counter-reset:n;padding:0;margin:18px 0 0}
+  .note li{counter-increment:n;position:relative;padding:0 0 16px 42px;font-size:16.5px;color:#34302c;max-width:680px}
+  .note li::before{content:counter(n);position:absolute;left:0;top:1px;width:27px;height:27px;background:var(--green);color:var(--green-ink);border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:600}
+  /* how it works timeline (PE brand) */
+  .tl{position:relative;margin-top:30px;padding-left:6px}
+  .tl::before{content:"";position:absolute;left:19px;top:8px;bottom:14px;width:2px;background:var(--line)}
+  .tl .step{position:relative;display:flex;gap:22px;padding:0 0 30px}
+  .tl .step:last-child{padding-bottom:0}
+  .tl .num{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:15px;z-index:1}
+  .tl .num.handle{background:var(--green);color:var(--green-ink)}
+  .tl .num.you{background:#fff;border:2px solid var(--green-deep);color:var(--ink-d)}
+  .tl .stbody{padding-top:3px}
+  .tl .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--green-deep);margin-bottom:5px}
+  .tl .sttitle{font-size:18.5px;font-weight:600;letter-spacing:-.02em;color:var(--ink-d);margin-bottom:4px}
+  .tl .stbody p{font-size:15px;color:#6f6d68;max-width:560px}
+  /* carousel */
+  .slides{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+  .slide{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:4px;background-size:cover;background-position:center;color:#fff;filter:grayscale(.04);box-shadow:var(--sh)}
+  .slide::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.56) 0%,rgba(0,0,0,.16) 44%,rgba(0,0,0,.08) 100%)}
+  .slide .ln{position:absolute;top:0;left:0;right:0;padding:20px 18px;font-family:var(--serif);font-size:18px;line-height:1.22;text-shadow:0 1px 12px rgba(0,0,0,.6)}
+  .slide.hook .ln{font-size:20px}
+  .slide .hd{position:absolute;bottom:13px;left:18px;font-size:8.5px;letter-spacing:.08em;color:rgba(255,255,255,.82)}
+  .slide .ix{position:absolute;bottom:13px;right:18px;font-size:8.5px;color:rgba(255,255,255,.6)}
+  .capnote{font-size:13.5px;color:var(--sub);font-style:italic;margin-top:18px;font-family:var(--serif)}
+  /* video */
+  .vidrow{display:flex;gap:38px;margin-top:10px;align-items:flex-start}
+  .phone{flex:none;width:286px;height:508px;border-radius:34px;background:#000;padding:9px;box-shadow:var(--sh-h);position:relative}
+  .phone video{width:100%;height:100%;border-radius:26px;object-fit:cover;display:block;background:#000;position:relative;z-index:0}
+  .phone .vtop{position:absolute;top:9px;left:9px;right:9px;height:120px;border-radius:26px 26px 0 0;background:linear-gradient(180deg,rgba(0,0,0,.62),rgba(0,0,0,0));pointer-events:none;z-index:1}
+  .phone .vbot{position:absolute;bottom:9px;left:9px;right:9px;height:210px;border-radius:0 0 26px 26px;background:linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,0));pointer-events:none;z-index:1}
+  .phone .lower{position:absolute;top:20px;left:22px;right:22px;pointer-events:none;font-family:var(--serif);font-size:19px;line-height:1.22;color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.8);z-index:2}
+  .phone .subs{position:absolute;left:16px;right:16px;bottom:120px;text-align:center;pointer-events:none;z-index:2;font-family:"Helvetica Neue",Helvetica,sans-serif;font-weight:600;font-size:16.5px;line-height:1.28;color:#fff;text-shadow:0 1px 2px #000,0 0 7px rgba(0,0,0,.95)}
+  .phone .subs span{color:rgba(255,255,255,.42);transition:color .1s ease}
+  .phone .subs span.wp{color:#fff}
+  .phone .subs span.won{color:var(--green)}
+  .playhint{font-size:12.5px;color:var(--green-deep);font-weight:600;margin-top:12px;display:flex;align-items:center;gap:7px}
+  .vidbody{flex:1}
+  .vidbody h4{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green-deep);margin:16px 0 7px}
+  .vidbody h4:first-child{margin-top:0}
+  .vidbody p{font-size:15px;color:#34302c;margin:9px 0;font-family:var(--serif)}
+  /* email card */
+  .card{border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--sh);overflow:hidden;margin-top:10px;max-width:620px}
+  .card .bar{background:var(--panel);padding:14px 22px;border-bottom:1px solid var(--line);font-size:13px;color:var(--sub)}
+  .card .bar b{color:var(--ink-d)}
+  .card .body{padding:24px 28px;font-family:var(--serif)}
+  .card .body p{font-size:15px;margin:11px 0;line-height:1.62;color:#34302c}
+  .card .body .si{font-style:italic;color:var(--green-deep);margin-top:14px}
+  /* quote */
+  .quote{position:relative;height:520px;max-width:680px;border-radius:14px;overflow:hidden;background-size:cover;background-position:center 30%;display:flex;align-items:center;justify-content:center;text-align:center;filter:grayscale(.04);margin-top:10px;box-shadow:var(--sh)}
+  .quote::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.46)}
+  .quote .q{position:relative;color:#fff;font-family:var(--serif);font-size:26px;line-height:1.4;font-style:italic;max-width:520px;padding:0 40px;text-shadow:0 1px 16px rgba(0,0,0,.5)}
+  .quote .by{position:absolute;bottom:24px;left:0;right:0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.74)}
+  /* practice */
+  .practice{background:#f6ffe9;border:1px solid #d8efb4;border-radius:16px;padding:28px 32px;margin-top:10px;max-width:660px;font-family:var(--serif)}
+  .practice .jft{font-family:"Helvetica Neue",sans-serif;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--green-deep);margin-bottom:14px;display:block}
+  .practice p{font-size:16px;margin:11px 0;color:#34302c}
+  /* blog */
+  .blog{max-width:680px;font-family:var(--serif);margin-top:10px}
+  .blog h3{font-size:25px;font-weight:600;letter-spacing:-.02em;color:var(--ink-d);margin-bottom:14px;font-family:"Helvetica Neue",sans-serif}
+  .blog p{font-size:15px;margin:12px 0;line-height:1.66;color:#34302c}
+  footer{max-width:940px;margin:0 auto;padding:36px 28px 0;display:flex;align-items:center;gap:11px;color:var(--sub);font-size:12.5px}
+  .steps3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:8px}
+  .steps3 .st{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:var(--sh)}
+  .steps3 .st .n{width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--green-ink);display:grid;place-items:center;font-weight:600;font-size:13px;margin-bottom:13px}
+  .steps3 .st b{display:block;font-size:15.5px;letter-spacing:-.01em;color:var(--ink-d);margin-bottom:5px}
+  .steps3 .st span{font-size:13.5px;color:var(--sub);line-height:1.5}
+  .cta{background:#f6ffe9;border:1px solid #d8efb4;border-radius:18px;padding:32px;text-align:center;margin-top:26px;max-width:660px}
+  .cta h3{font-size:22px;font-weight:500;letter-spacing:-.03em;color:var(--ink-d)}
+  .cta p{max-width:520px;margin:10px auto 20px;font-size:15px;color:#34302c}
+  .cta .btn{display:inline-block;background:var(--green);color:var(--green-ink);font-weight:600;font-size:15px;padding:14px 28px;border-radius:999px;text-decoration:none;letter-spacing:-.01em}
+  @media(max-width:720px){
+    main{padding:0 18px 84px} section{padding:42px 0} h1{font-size:36px}
+    header .hdr-r{display:none}
+    .slides{grid-template-columns:1fr 1fr;gap:11px}
+    .slide .ln{font-size:15px;padding:14px 13px}.slide.hook .ln{font-size:16px}
+    .vidrow{flex-direction:column;gap:20px}
+    .phone{width:100%;max-width:300px;height:auto;aspect-ratio:9/16;margin:0 auto}
+    .phone .vbot{height:170px}.phone .subs{bottom:104px;font-size:15px}
+    .quote{height:auto;aspect-ratio:4/5}.quote .q{font-size:21px;padding:0 26px}
+    .card,.practice,.blog,.cta{max-width:none}.steps3{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<header><div class="hwrap"><div class="pe">PE</div><span class="brandname">Perpetual Engine</span><span class="hdr-r">for Natalie's Queendom</span></div></header>
+
+<main>
+  <section class="hero">
+    <span class="eyebrow">A content sample</span>
+    <h1>What your content<br>could look like.</h1>
+    <p class="lede">One of your videos, turned into a week of content across every surface. In your voice, and your brand. Without any more of your input.</p>
+  </section>
+
+  <section class="note">
+    <span class="label">A note before you begin</span>
+    <h2>What this shows.</h2>
+    <ol>
+      <li>Everything here comes from one of your own videos, your summit conversation on turning our deepest wounds into our greatest gifts. We run it every week, from the long form videos you already have.</li>
+      <li>Every piece is drawn only from your own words, and held to your voice.</li>
+      <li>The carousel, the clip, and the quote card use your own photography and feed. Each one is ready to publish.</li>
+      <li>Read any single piece and ask one question. Does this sound like you. That is the whole test.</li>
+    </ol>
+  </section>
+
+  <section>
+    <span class="label">How it works</span>
+    <h2>From your videos to a steady feed.</h2>
+    <p class="whatsub">Two light touches from you. The rest is on us, every week.</p>
+    <div class="tl">
+      <div class="step">
+        <div class="num you">1</div>
+        <div class="stbody"><span class="tag">Your part</span><div class="sttitle">You share your videos</div><p>Send us your long-form videos. This is the only step that needs you.</p></div>
+      </div>
+      <div class="step">
+        <div class="num handle">2</div>
+        <div class="stbody"><span class="tag">We handle it</span><div class="sttitle">We set up your engine</div><p>We study your voice, your brand, and your strongest moments, and build your content system around them.</p></div>
+      </div>
+      <div class="step">
+        <div class="num handle">3</div>
+        <div class="stbody"><span class="tag">We handle it</span><div class="sttitle">We turn them into everything</div><p>Reels, carousels, blogs, newsletters, and emails. Each one written and designed in your voice.</p></div>
+      </div>
+      <div class="step">
+        <div class="num handle">4</div>
+        <div class="stbody"><span class="tag">We handle it</span><div class="sttitle">We create fresh content too</div><p>Every week we research what is rising in your niche and create original, timely pieces, so your feed always feels current.</p></div>
+      </div>
+      <div class="step">
+        <div class="num you">5</div>
+        <div class="stbody"><span class="tag">Your part</span><div class="sttitle">You approve, we publish</div><p>A quick review from you, and it goes out on a steady cadence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">Carousel</span>
+    <h2>A teaching carousel, on your own photography.</h2>
+    <p class="whatsub">Six slides from your conversation on turning your deepest wounds into your greatest gifts.</p>
+    <div class="slides">
+      <div class="slide hook" style="background-image:url('photos/p1.jpg')"><div class="ln">If I could give the world one teaching, it would be this.</div><div class="hd">@nataliesqueendom</div><div class="ix">1 / 6</div></div>
+      <div class="slide" style="background-image:url('photos/p11.jpg')"><div class="ln">Pain hurts. Suffering is the resistance to it.</div><div class="hd">@nataliesqueendom</div><div class="ix">2 / 6</div></div>
+      <div class="slide" style="background-image:url('photos/p2.jpg')"><div class="ln">When the pain comes, we rush to numb it. And that is when it stays stuck in the body.</div><div class="hd">@nataliesqueendom</div><div class="ix">3 / 6</div></div>
+      <div class="slide" style="background-image:url('photos/p10.jpg')"><div class="ln">These are the scars of a life fully lived. We can bind them back together with gold.</div><div class="hd">@nataliesqueendom</div><div class="ix">4 / 6</div></div>
+      <div class="slide" style="background-image:url('photos/p12.jpg')"><div class="ln">I have lived some big wounds. I needed every one of them to become who I am.</div><div class="hd">@nataliesqueendom</div><div class="ix">5 / 6</div></div>
+      <div class="slide" style="background-image:url('photos/profile.jpg')"><div class="ln">Every loss, every gain, everyone who comes and goes, is part of the plan of our greater good.</div><div class="hd">@nataliesqueendom</div><div class="ix">6 / 6</div></div>
+    </div>
+    <p class="capnote">Your photography, your words. Text placement and tone follow your existing feed.</p>
+  </section>
+
+  <section>
+    <span class="label">Short-form video</span>
+    <h2>A clip, cut from your video. Press play.</h2>
+    <p class="whatsub">A real 50 seconds from your summit conversation, cropped to vertical, captioned, ready to post.</p>
+    <div class="vidrow">
+      <div class="phone">
+        <video controls playsinline preload="metadata" poster="poster.jpg"><source src="clip.mp4" type="video/mp4"></video>
+        <div class="vtop"></div><div class="vbot"></div>
+        <div class="lower">How I learned to meet my pain</div>
+        <div class="subs"></div>
+      </div>
+      <div class="vidbody">
+        <div class="playhint">▶ &nbsp;Click the video to play</div>
+        <h4>What you say</h4>
+        <p>"When I allow myself to feel pain, I find, at the end of it, gratitude. There is nothing too big, too extreme, too traumatic that I cannot be grateful for. That was the portal to rebirth. The doorway is gratitude. Can I be grateful for it all?"</p>
+        <h4>The caption we would run</h4>
+        <p>Beloved, the way out is in. When the ache arrives, let yourself feel it all the way down. Underneath it, gratitude is waiting, and gratitude is the doorway to your rebirth.</p>
+        <p>What could you let yourself feel today?</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">Email / newsletter</span>
+    <h2>A note to your list. One idea, written like a letter.</h2>
+    <p class="whatsub">For the beloveds who follow you. Intimate, with one soft door at the end.</p>
+    <div class="card">
+      <div class="bar"><b>Subject:</b> The doorway is gratitude</div>
+      <div class="body">
+        <p>Beloved,</p>
+        <p>There was a season when pain would arrive and I would reach for anything to soften it. Sad music to cry along to. A distraction to take the edge off. Anything so I would not have to feel the whole of it.</p>
+        <p>Then one night I turned the music off and let myself feel it all the way down. The grief, the breaking of the story, the death of who I thought I was. I stayed with it. And at the very bottom, I found something I did not expect. Gratitude.</p>
+        <p>Pain hurts, and that part is honest. Suffering is the resistance to it, the bracing, the looking away. When we stop bracing and let the feeling move through, it does what every emotion is born to do. It passes, and it leaves a gift.</p>
+        <p>There is nothing too big or too heavy to be grateful for, once you have let yourself feel it fully. That is the portal to rebirth. The doorway is gratitude.</p>
+        <p>Just for today, when something aches, let yourself feel it all the way down, and notice what is waiting underneath.</p>
+        <p class="si">Love,<br>Natalie</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">Quote card</span>
+    <h2>A single line of your teaching, on your imagery.</h2>
+    <p class="whatsub">From your own words. Clean, unadorned, instantly recognizable as yours.</p>
+    <div class="quote" style="background-image:url('photos/p2.jpg')">
+      <div class="q">Only those who are willing to feel the pain can know the truest, deepest love.</div>
+      <div class="by">Natalie's Queendom</div>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">A practice</span>
+    <h2>A "just for today" invitation to carry with you.</h2>
+    <p class="whatsub">Drawn from the way you describe meeting your own pain in the video.</p>
+    <div class="practice">
+      <span class="jft">Just for today</span>
+      <p>Just for today, when an ache rises, turn off the distraction.</p>
+      <p>Let yourself feel it all the way down. The grief, the heaviness, the part of the story that is ending. Stay with it a little longer than is comfortable, the way you would stay with a friend who is crying.</p>
+      <p>When you reach the bottom of it, ask one quiet question. Can I find one thing here to be grateful for? Let the answer rise from your body, not your mind.</p>
+      <p>This is how pain becomes a doorway.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">Blog excerpt</span>
+    <h2>A long-form piece for your site, from the same video.</h2>
+    <p class="whatsub">Search-friendly, in your voice, ready to publish. Shown trimmed.</p>
+    <div class="blog">
+      <h3>The doorway is gratitude</h3>
+      <p>There is a doorway most of us walk past, because it is hidden behind the very thing we spend our lives trying to avoid.</p>
+      <p>We are never taught how to meet pain. In school we learn calculus and the capitals of the world, and almost nothing about what to do when the heart breaks. So when the ache comes, we do the only thing we know. We numb it. We reach for sex, for a drink, for noise, for anything that will take the edge off. And in the numbing, the pain does not leave. It settles into the body and waits.</p>
+      <p>Here is the distinction that changed everything for me. Pain and suffering are two different things. Pain hurts, and it is honest. Suffering is the resistance to the pain, the bracing against it, the story that this should not be happening to me. Often the heaviest thing we carry is the years we spend refusing to feel the first wound.</p>
+      <p>Some time ago a marriage of thirteen years ended. I went to bed in so much pain and put on sad music so I could cry. Then I noticed the music was doing my feeling for me, keeping me one step removed from what was actually there. So I turned it off, and I stayed in silence with it for days. I let myself feel all of it. The grief, the breaking of the story, the death of who I thought I was.</p>
+      <p>And at the bottom of that feeling, I found gratitude. The real kind, the kind that arrives only once you have let yourself feel everything else first. There is nothing too big, too extreme, too traumatic to be grateful for, once it has been fully felt. That gratitude was a portal. It was the light at the end of the tunnel everyone speaks of, and the doorway was thankfulness.</p>
+      <p>Think of the Japanese art of kintsugi, where broken pottery is bound back together with gold and becomes more beautiful than it was before it broke. Your scars can be the gold. Every wound I have lived through, and I have lived some big ones, I needed in order to become who I am. Every loss, every gain, everyone who came and left, part of the plan of a greater good.</p>
+      <p>So the next time the ache arrives, try meeting it rather than muffling it. Feel it all the way down. Stay until you reach the gratitude underneath. That is the doorway. The only way out is in.</p>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">Working together</span>
+    <h2>From your videos to a steady feed.</h2>
+    <p class="whatsub">We run it every week, from the long form videos you already have.</p>
+    <div class="steps3">
+      <div class="st"><span class="n">1</span><b>You hand us your videos.</b><span>Summits, talks, livestreams, whatever you already have.</span></div>
+      <div class="st"><span class="n">2</span><b>We draft every format.</b><span>Carousels, clips, emails, a blog, a weekly quote and practice. All in your voice and branding.</span></div>
+      <div class="st"><span class="n">3</span><b>You approve, we publish.</b><span>A light review each week. We carry the rest.</span></div>
+    </div>
+    <div class="cta">
+      <h3 style="margin-bottom:22px">Want to see this on other videos you own?</h3>
+      <a class="btn" href="https://calendly.com/perpetualfunnels/30min" target="_blank" rel="noopener">Let's map your first month</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="pe">PE</div><span>Perpetual Engine · for Natalie's Queendom · a content sample</span></footer>
+
+<script>
+(function(){
+  var ph=document.querySelector('.phone'); if(!ph) return;
+  var v=ph.querySelector('video'), sub=ph.querySelector('.subs');
+  var W=[[0.47,"When"],[0.5,"I"],[0.58,"allow"],[1.16,"myself"],[1.87,"to"],[2.16,"feel"],[2.68,"pain,"],[3.13,"and"],[3.35,"then"],[3.64,"I"],[3.74,"find"],[4.32,"at"],[4.51,"the"],[4.73,"end"],[4.99,"of"],[5.33,"it,"],[6.08,"gratitude,"],[6.9,"and"],[7.0,"that"],[7.43,"goes"],[7.6,"through"],[7.99,"death,"],[8.88,"death"],[9.4,"of"],[9.65,"the"],[10.0,"story,"],[10.49,"death"],[10.69,"of"],[10.7,"what"],[10.86,"you"],[11.0,"thought"],[11.3,"you"],[11.5,"were,"],[11.9,"death"],[12.08,"of"],[12.1,"what"],[12.27,"you"],[12.4,"were"],[12.62,"becoming,"],[14.16,"death"],[14.44,"of"],[14.48,"a"],[14.49,"friendship,"],[15.15,"of"],[15.3,"a"],[15.36,"whatever."],[16.0,"And"],[16.5,"you"],[16.66,"go"],[16.88,"through"],[17.63,"that"],[18.16,"death"],[18.64,"and"],[18.98,"find"],[19.41,"gratitude"],[20.51,"for"],[20.73,"anything."],[22.44,"There's"],[22.61,"nothing"],[23.23,"too"],[23.48,"big,"],[23.92,"too"],[24.18,"extreme,"],[24.97,"too"],[25.23,"traumatic"],[26.02,"that"],[26.37,"I"],[26.51,"cannot"],[26.98,"be"],[27.15,"grateful"],[27.98,"for,"],[28.39,"which"],[28.76,"was"],[28.99,"also"],[29.42,"a"],[29.43,"crazy,"],[30.18,"like,"],[30.88,"mind-explosion."],[32.0,"Like,"],[32.66,"how"],[32.99,"can"],[33.32,"I"],[33.43,"find"],[33.87,"gratitude"],[34.86,"for"],[35.19,"the"],[35.52,"most"],[35.98,"craziest"],[36.84,"life"],[37.98,"situations,"],[38.6,"but"],[38.93,"you"],[39.43,"can."],[40.0,"And"],[40.51,"when"],[40.77,"you"],[41.1,"find"],[41.54,"that,"],[42.2,"I"],[42.35,"found"],[42.86,"that"],[43.35,"was"],[43.65,"the"],[43.98,"portal"],[44.69,"to"],[44.84,"rebirth."],[46.0,"That"],[46.49,"was"],[46.51,"the"],[46.7,"life"],[46.98,"at"],[47.12,"the"],[47.33,"end"],[47.54,"of"],[47.68,"the"],[47.89,"tunnel"],[48.35,"that"],[48.68,"everyone"],[49.16,"refers"],[49.57,"to."],[50.0,"The"],[50.51,"doorway"],[50.83,"is"],[50.98,"gratitude."],[52.16,"Can"],[52.35,"I"],[52.4,"be"],[52.68,"grateful?"]];
+  for(var i=1;i<W.length;i++){ if(W[i][0]<=W[i-1][0]) W[i][0]=W[i-1][0]+0.06; }
+  var LINES=[], cur=[], curlen=0;
+  for(var i=0;i<W.length;i++){ var gap=i>0?W[i][0]-W[i-1][0]:0; if(cur.length&&(curlen+W[i][1].length+1>26||gap>1.1)){LINES.push(cur);cur=[];curlen=0;} cur.push(i); curlen+=W[i][1].length+1; }
+  if(cur.length) LINES.push(cur);
+  var lineOf=[]; for(var li=0;li<LINES.length;li++) for(var k=0;k<LINES[li].length;k++) lineOf[LINES[li][k]]=li;
+  var last="";
+  function ci(t){ var idx=-1; for(var i=0;i<W.length;i++){ if(W[i][0]<=t) idx=i; else break; } return idx; }
+  function render(t){
+    var c=ci(t);
+    if(c<0){ if(last!==""){sub.innerHTML="";last="";} return; }
+    var line=LINES[lineOf[c]], h="";
+    for(var k=0;k<line.length;k++){ var wi=line[k]; var cls=wi===c?"won":(wi<c?"wp":""); h+='<span class="'+cls+'">'+W[wi][1]+'</span> '; }
+    if(h!==last){ sub.innerHTML=h; last=h; }
+  }
+  var raf;
+  function loop(){ render(v.currentTime); if(!v.paused&&!v.ended) raf=requestAnimationFrame(loop); }
+  v.addEventListener("play",function(){ cancelAnimationFrame(raf); loop(); });
+  v.addEventListener("pause",function(){ cancelAnimationFrame(raf); render(v.currentTime); });
+  v.addEventListener("seeked",function(){ render(v.currentTime); });
+  v.addEventListener("timeupdate",function(){ render(v.currentTime); });
+  render(0);
+})();
+</script>
+</body>
+</html>
