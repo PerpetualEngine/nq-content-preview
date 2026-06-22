@@ -180,9 +180,9 @@
 
   <section>
     <span class="label">Short-form video</span>
-    <h2>A clip, cut from your video. Press play.</h2>
-    <p class="whatsub">A real 50 seconds from your summit conversation, cropped to vertical, captioned, ready to post.</p>
-    <div class="vidrow">
+    <h2>Two clips, cut from the same conversation. Press play.</h2>
+    <p class="whatsub">Real moments from your summit, cropped to vertical, captioned, ready to post. One of yours, and one of your guest's. From a single video, every voice in the room becomes content.</p>
+    <div class="vidrow" id="clip-natalie">
       <div class="phone">
         <video controls playsinline preload="metadata" poster="poster.jpg"><source src="clip.mp4" type="video/mp4"></video>
         <div class="vtop"></div><div class="vbot"></div>
@@ -190,12 +190,28 @@
         <div class="subs"></div>
       </div>
       <div class="vidbody">
-        <div class="playhint">▶ &nbsp;Click the video to play</div>
+        <div class="playhint">▶ &nbsp;Your clip</div>
         <h4>What you say</h4>
         <p>"When I allow myself to feel pain, I find, at the end of it, gratitude. There is nothing too big, too extreme, too traumatic that I cannot be grateful for. That was the portal to rebirth. The doorway is gratitude. Can I be grateful for it all?"</p>
         <h4>The caption we would run</h4>
         <p>Beloved, the way out is in. When the ache arrives, let yourself feel it all the way down. Underneath it, gratitude is waiting, and gratitude is the doorway to your rebirth.</p>
         <p>What could you let yourself feel today?</p>
+      </div>
+    </div>
+    <div class="vidrow" id="clip-gill" style="margin-top:46px;padding-top:42px;border-top:1px solid var(--line)">
+      <div class="phone">
+        <video controls playsinline preload="metadata" poster="poster_gill.jpg"><source src="gill.mp4" type="video/mp4"></video>
+        <div class="vtop"></div><div class="vbot"></div>
+        <div class="lower">Thank you, psychosis</div>
+        <div class="subs"></div>
+      </div>
+      <div class="vidbody">
+        <div class="playhint">▶ &nbsp;Your guest's clip · Gill, founder of AMENTI</div>
+        <h4>What he says</h4>
+        <p>"Pain is one of the greatest teachers there is. When we look back at negative experiences, we don't just burn them down. We actually give thanks toward them. I give thanks to my psychosis. Without my psychosis, AMENTI would not exist. So I always say, thank you, psychosis. And that already changes your energetic bondage toward that experience."</p>
+        <h4>The caption we would run</h4>
+        <p>The wound becomes the teacher the moment you turn and thank it. What if the hardest thing you have lived is the very thing that built you?</p>
+        <p>One conversation. Two voices. A week of content from each.</p>
       </div>
     </div>
   </section>
@@ -276,10 +292,10 @@
 <footer><div class="pe">PE</div><span>Perpetual Engine · for Natalie's Queendom · a content sample</span></footer>
 
 <script>
-(function(){
-  var ph=document.querySelector('.phone'); if(!ph) return;
+function initPhone(ph, W){
+  if(!ph) return;
   var v=ph.querySelector('video'), sub=ph.querySelector('.subs');
-  var W=[[0.47,"When"],[0.5,"I"],[0.58,"allow"],[1.16,"myself"],[1.87,"to"],[2.16,"feel"],[2.68,"pain,"],[3.13,"and"],[3.35,"then"],[3.64,"I"],[3.74,"find"],[4.32,"at"],[4.51,"the"],[4.73,"end"],[4.99,"of"],[5.33,"it,"],[6.08,"gratitude,"],[6.9,"and"],[7.0,"that"],[7.43,"goes"],[7.6,"through"],[7.99,"death,"],[8.88,"death"],[9.4,"of"],[9.65,"the"],[10.0,"story,"],[10.49,"death"],[10.69,"of"],[10.7,"what"],[10.86,"you"],[11.0,"thought"],[11.3,"you"],[11.5,"were,"],[11.9,"death"],[12.08,"of"],[12.1,"what"],[12.27,"you"],[12.4,"were"],[12.62,"becoming,"],[14.16,"death"],[14.44,"of"],[14.48,"a"],[14.49,"friendship,"],[15.15,"of"],[15.3,"a"],[15.36,"whatever."],[16.0,"And"],[16.5,"you"],[16.66,"go"],[16.88,"through"],[17.63,"that"],[18.16,"death"],[18.64,"and"],[18.98,"find"],[19.41,"gratitude"],[20.51,"for"],[20.73,"anything."],[22.44,"There's"],[22.61,"nothing"],[23.23,"too"],[23.48,"big,"],[23.92,"too"],[24.18,"extreme,"],[24.97,"too"],[25.23,"traumatic"],[26.02,"that"],[26.37,"I"],[26.51,"cannot"],[26.98,"be"],[27.15,"grateful"],[27.98,"for,"],[28.39,"which"],[28.76,"was"],[28.99,"also"],[29.42,"a"],[29.43,"crazy,"],[30.18,"like,"],[30.88,"mind-explosion."],[32.0,"Like,"],[32.66,"how"],[32.99,"can"],[33.32,"I"],[33.43,"find"],[33.87,"gratitude"],[34.86,"for"],[35.19,"the"],[35.52,"most"],[35.98,"craziest"],[36.84,"life"],[37.98,"situations,"],[38.6,"but"],[38.93,"you"],[39.43,"can."],[40.0,"And"],[40.51,"when"],[40.77,"you"],[41.1,"find"],[41.54,"that,"],[42.2,"I"],[42.35,"found"],[42.86,"that"],[43.35,"was"],[43.65,"the"],[43.98,"portal"],[44.69,"to"],[44.84,"rebirth."],[46.0,"That"],[46.49,"was"],[46.51,"the"],[46.7,"life"],[46.98,"at"],[47.12,"the"],[47.33,"end"],[47.54,"of"],[47.68,"the"],[47.89,"tunnel"],[48.35,"that"],[48.68,"everyone"],[49.16,"refers"],[49.57,"to."],[50.0,"The"],[50.51,"doorway"],[50.83,"is"],[50.98,"gratitude."],[52.16,"Can"],[52.35,"I"],[52.4,"be"],[52.68,"grateful?"]];
+  if(!v||!sub) return;
   for(var i=1;i<W.length;i++){ if(W[i][0]<=W[i-1][0]) W[i][0]=W[i-1][0]+0.06; }
   var LINES=[], cur=[], curlen=0;
   for(var i=0;i<W.length;i++){ var gap=i>0?W[i][0]-W[i-1][0]:0; if(cur.length&&(curlen+W[i][1].length+1>26||gap>1.1)){LINES.push(cur);cur=[];curlen=0;} cur.push(i); curlen+=W[i][1].length+1; }
@@ -301,6 +317,12 @@
   v.addEventListener("seeked",function(){ render(v.currentTime); });
   v.addEventListener("timeupdate",function(){ render(v.currentTime); });
   render(0);
+}
+(function(){
+  var W_NAT=[[0.47,"When"],[0.5,"I"],[0.58,"allow"],[1.16,"myself"],[1.87,"to"],[2.16,"feel"],[2.68,"pain,"],[3.13,"and"],[3.35,"then"],[3.64,"I"],[3.74,"find"],[4.32,"at"],[4.51,"the"],[4.73,"end"],[4.99,"of"],[5.33,"it,"],[6.08,"gratitude,"],[6.9,"and"],[7.0,"that"],[7.43,"goes"],[7.6,"through"],[7.99,"death,"],[8.88,"death"],[9.4,"of"],[9.65,"the"],[10.0,"story,"],[10.49,"death"],[10.69,"of"],[10.7,"what"],[10.86,"you"],[11.0,"thought"],[11.3,"you"],[11.5,"were,"],[11.9,"death"],[12.08,"of"],[12.1,"what"],[12.27,"you"],[12.4,"were"],[12.62,"becoming,"],[14.16,"death"],[14.44,"of"],[14.48,"a"],[14.49,"friendship,"],[15.15,"of"],[15.3,"a"],[15.36,"whatever."],[16.0,"And"],[16.5,"you"],[16.66,"go"],[16.88,"through"],[17.63,"that"],[18.16,"death"],[18.64,"and"],[18.98,"find"],[19.41,"gratitude"],[20.51,"for"],[20.73,"anything."],[22.44,"There's"],[22.61,"nothing"],[23.23,"too"],[23.48,"big,"],[23.92,"too"],[24.18,"extreme,"],[24.97,"too"],[25.23,"traumatic"],[26.02,"that"],[26.37,"I"],[26.51,"cannot"],[26.98,"be"],[27.15,"grateful"],[27.98,"for,"],[28.39,"which"],[28.76,"was"],[28.99,"also"],[29.42,"a"],[29.43,"crazy,"],[30.18,"like,"],[30.88,"mind-explosion."],[32.0,"Like,"],[32.66,"how"],[32.99,"can"],[33.32,"I"],[33.43,"find"],[33.87,"gratitude"],[34.86,"for"],[35.19,"the"],[35.52,"most"],[35.98,"craziest"],[36.84,"life"],[37.98,"situations,"],[38.6,"but"],[38.93,"you"],[39.43,"can."],[40.0,"And"],[40.51,"when"],[40.77,"you"],[41.1,"find"],[41.54,"that,"],[42.2,"I"],[42.35,"found"],[42.86,"that"],[43.35,"was"],[43.65,"the"],[43.98,"portal"],[44.69,"to"],[44.84,"rebirth."],[46.0,"That"],[46.49,"was"],[46.51,"the"],[46.7,"life"],[46.98,"at"],[47.12,"the"],[47.33,"end"],[47.54,"of"],[47.68,"the"],[47.89,"tunnel"],[48.35,"that"],[48.68,"everyone"],[49.16,"refers"],[49.57,"to."],[50.0,"The"],[50.51,"doorway"],[50.83,"is"],[50.98,"gratitude."],[52.16,"Can"],[52.35,"I"],[52.4,"be"],[52.68,"grateful?"]];
+  var W_GILL=[[0.99,"And"],[1.12,"I"],[1.21,"often"],[1.69,"say"],[2.1,"that"],[2.33,"when"],[2.46,"we"],[2.56,"look"],[2.86,"at"],[2.96,"these"],[3.26,"painful"],[3.7,"moments,"],[4.34,"pain"],[4.56,"is"],[4.8,"one"],[5.04,"of"],[5.12,"the"],[5.24,"greatest"],[5.56,"teachers"],[6.49,"there"],[6.66,"is,"],[7.0,"that"],[7.38,"when"],[7.68,"we"],[7.9,"are"],[8.1,"able"],[8.44,"to"],[8.61,"look"],[8.95,"back"],[9.29,"at"],[9.45,"things"],[9.97,"and"],[10.27,"negative"],[10.9,"experiences"],[11.92,"that"],[12.52,"we"],[12.82,"don't"],[13.02,"just"],[13.42,"burn"],[13.82,"it"],[14.01,"down"],[14.42,"without,"],[15.73,"I'm"],[16.22,"done"],[16.43,"with"],[16.84,"it,"],[17.23,"but"],[17.62,"actually"],[18.74,"give"],[18.88,"thanks"],[19.48,"towards"],[19.74,"it."],[20.48,"I"],[20.56,"give"],[20.91,"thanks"],[21.44,"to"],[21.61,"my"],[21.8,"psychosis."],[22.88,"My"],[23.03,"psychosis"],[23.78,"has"],[23.96,"been"],[24.27,"one"],[24.5,"of"],[24.65,"the"],[24.88,"best"],[25.19,"and"],[25.51,"biggest"],[26.41,"teachers."],[26.8,"Without"],[27.31,"my"],[27.45,"psychosis,"],[28.32,"AMENTI"],[28.75,"would"],[29.12,"not"],[29.34,"exist."],[30.0,"So"],[30.1,"I"],[30.19,"always"],[30.46,"say,"],[30.77,"\"Thank"],[31.04,"you"],[31.97,"psychosis\""],[32.68,"And"],[33.14,"that"],[33.64,"already"],[34.61,"changes"],[35.58,"your"],[36.13,"energetic"],[37.99,"bondage"],[38.0,"towards"],[38.61,"that"],[38.88,"experience"]];
+  initPhone(document.querySelector('#clip-natalie .phone'), W_NAT);
+  initPhone(document.querySelector('#clip-gill .phone'), W_GILL);
 })();
 </script>
 </body>
