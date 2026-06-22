@@ -57,6 +57,9 @@
   .slide .pill{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:rgba(245,240,232,.93);color:#3a2f33;font-size:7px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;padding:4px 11px;border-radius:999px;white-space:nowrap;font-family:"Helvetica Neue",sans-serif}
   .slide .ix{position:absolute;top:13px;right:15px;font-size:8px;letter-spacing:.06em;color:rgba(246,239,231,.78);font-family:var(--disp)}
   .capnote{font-size:13.5px;color:var(--sub);font-style:italic;margin-top:18px;font-family:var(--serif)}
+  /* single posts */
+  .singles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+  .singles img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:4px;box-shadow:var(--sh);display:block}
   /* video */
   .vidrow{display:flex;gap:38px;margin-top:10px;align-items:flex-start}
   .phone{flex:none;width:286px;height:508px;border-radius:34px;background:#000;padding:9px;box-shadow:var(--sh-h);position:relative}
@@ -108,6 +111,7 @@
     main{padding:0 18px 84px} section{padding:42px 0} h1{font-size:36px}
     header .hdr-r{display:none}
     .slides{grid-template-columns:1fr 1fr;gap:11px}
+    .singles{grid-template-columns:1fr 1fr;gap:11px}
     .slide .ln{font-size:15px;padding:14px 13px}.slide.hook .ln{font-size:16px}
     .vidrow{flex-direction:column;gap:20px}
     .phone{width:100%;max-width:300px;height:auto;aspect-ratio:9/16;margin:0 auto}
@@ -179,6 +183,19 @@
       <div class="slide" style="background-image:url('photos/profile.jpg')"><div class="fr"></div><div class="ln">Every loss, every gain, is part of the plan of our greater good.</div><div class="pill">By @nataliesqueendom</div><div class="ix">6 / 6</div></div>
     </div>
     <p class="capnote">Your photography, your words. Text placement and tone follow your existing feed.</p>
+  </section>
+
+  <section>
+    <span class="label">Single posts</span>
+    <h2>Standalone posts, in your bolder voice.</h2>
+    <p class="whatsub">Some posts stand on their own. These are single-image posts in your edgier register, the rock-and-roll side of your feed, each drawn from the same conversation.</p>
+    <div class="singles">
+      <img src="singles/s0.jpg" alt="Single post">
+      <img src="singles/s1.jpg" alt="Single post">
+      <img src="singles/s2.jpg" alt="Single post">
+      <img src="singles/s3.jpg" alt="Single post">
+    </div>
+    <p class="capnote">The same teaching, in the louder voice your feed already speaks.</p>
   </section>
 
   <section>
